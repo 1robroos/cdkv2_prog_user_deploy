@@ -1,0 +1,38 @@
+project_name: "AzureDevOpsUser"
+# Repository definitions
+repository_properties:
+  repository_name: "cdkv2_prog_user_deploy"
+  create_repository: "true"
+  description: "Repository for azure devops cdk user"
+  branch: "master"
+
+# Multi Environment setup
+devsecops_account: "969526043371" # my master account
+devsecops_region: "us-east-1"
+
+deployment_account: "851725500938" # MySandbox
+deployment_region: "us-east-1"
+
+stg_account: "376609466062" # SandboxAccount1
+stg_region: "us-east-1"
+
+iam_properties:
+  user_name: "azdp_lab"
+  context:
+    from: "2023-01-01T00:00:00Z"
+    up: "2026-06-30T23:59:59Z"
+  assume_roles:
+    - arn: "arn:aws:iam::376609466062:role/cdk-hnb659fds-deploy-role-376609466062-us-east-1"
+    - arn: "arn:aws:iam::376609466062:role/cdk-hnb659fds-lookup-role-376609466062-us-east-1"
+    - arn: "arn:aws:iam::376609466062:role/cdk-hnb659fds-file-publishing-role-376609466062-us-east-1"
+
+
+# Tags definitions align with corporation instructions
+tags:
+  - key: "Project"
+    value: "AzureDevOpsUser"
+  - key: "Environment"
+    value: "dev"
+  - key: "Owner"
+    value: "DevSecOpsAdm"
+

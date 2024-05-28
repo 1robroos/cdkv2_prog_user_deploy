@@ -2,6 +2,8 @@
 import os
 
 import aws_cdk as cdk
+#import cdk-nag as cdk-nag
+
 from aws_cdk import Aspects
 from cdk_nag import AwsSolutionsChecks, NagSuppressions
 
